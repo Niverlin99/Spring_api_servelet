@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+ xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ <display-name>bankCrudSample</display-name>
+<!--  <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list> -->
+ 
+ 
+ <!-- web. xml defines mappings between URL paths and the servlets that handle requests with those paths. -->
+ 
+<!--  Central dispatcher for HTTP request handlers/controllers, e.g. for web UI controllers or HTTP-based remote service exporters. 
+ Dispatches to registered handlers for processing a web request, providing convenient mapping and exception handling facilities. -->
+ 
+ <servlet>
+  <servlet-name>bank</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+ 
+ 
+<!--  Servlet mapping specifies the web container of which java servlet should be invoked for a url given by client. 
+ It maps url patterns to servlets. When there is a request from a client, servlet container decides to which application it 
+ should forward to. -->
+ 
+ <servlet-mapping>
+  <servlet-name>bank</servlet-name>
+  <url-pattern>/</url-pattern>
+ </servlet-mapping>
+ 
+ <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list>
+</web-app>

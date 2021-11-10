@@ -1,0 +1,177 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>bankcustomerdetails</groupId>
+  <artifactId>bank</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>bankcustomerdetails</name>
+  <description>bankcustomerdetails</description>
+  
+  <build>
+  <plugins>
+  
+  <!-- The compiler plugin is used to compile the source code of a Maven project -->
+  
+   <plugin>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+     <source>1.5</source>
+     <target>1.5</target>
+    </configuration>
+   </plugin>
+   
+   <!-- The WAR Plugin is responsible for collecting all artifact dependencies, classes and resources of the web application and 
+   packaging them into a web application archive. -->
+   
+   <plugin>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>2.2</version>
+    <configuration>
+     <source>1.7</source>
+     <target>1.7</target>
+     <failOnMissingWebXml>false</failOnMissingWebXml>
+    </configuration>
+   </plugin>
+  </plugins>
+ </build>
+ 
+ 
+   
+
+ 
+ <!-- properties declaration once we declare the common we use the all dependencies Ex: ${spring.version} Automatically get this version -->
+ 
+ <properties>
+  <spring.version>4.1.4.RELEASE</spring.version>
+ </properties>
+ 
+ <dependencies>
+ 
+<!--  The javax. servlet package is the core of the Servlet API. It contains the classes necessary for a standard, protocol-independent servlet. 
+Every servlet must implement the Servlet interface in one form or another. The abstract GenericServlet class provides the framework for developing basic servlets -->  
+ 
+ <dependency>
+   <groupId>javax.servlet</groupId>
+   <artifactId>servlet-api</artifactId>
+   <version>2.5</version>
+  </dependency>
+ 
+ <!-- Spring Core Container: this is the base module of Spring and provides spring containers (BeanFactory and ApplicationContext). 
+ Aspect-oriented programming: enables implementing cross-cutting concerns. -->
+ 
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-core</artifactId>
+   <version>${spring.version}</version>
+  </dependency>
+ 
+<!--  The spring-web dependency contains common web specific utilities for both Servlet and Portlet environments, while spring-webmvc enables the MVC support for Servlet environments.
+  Since spring-webmvc has spring-web as a dependency, explicitly defining spring-web is not required when using spring-webmvc. -->
+ 
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-web</artifactId>
+   <version>${spring.version}</version>
+  </dependency>
+ 
+ 
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-webmvc</artifactId>
+   <version>${spring.version}</version>
+  </dependency>
+ 
+<!--  This dependency – spring-context – defines the actual Spring Injection Container and has a small number of dependencies: 
+spring-core, spring-expression, spring-aop, and spring-beans -->
+ 
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-context</artifactId>
+   <version>${spring.version}</version>
+  </dependency>
+  
+<!--   Jackson is a simple java based library to serialize java objects to JSON and vice versa -->
+  
+  <dependency>
+   <groupId>com.fasterxml.jackson.core</groupId>
+   <artifactId>jackson-databind</artifactId>
+   <version>2.4.1</version>
+  </dependency>
+ 
+ 
+<!--  MySQL provides connectivity for client applications developed in the Java programming language with MySQL Connector/J,
+  a driver that implements the Java Database Connectivity (JDBC) API. MySQL Connector/J is a JDBC Type 4 driver. -->
+ 
+  <dependency>
+   <groupId>mysql</groupId>
+   <artifactId>mysql-connector-java</artifactId>
+   <version>5.1.9</version>
+  </dependency>
+ 
+ 
+<!--  In Spring Boot JDBC, the database related beans such as DataSource, JdbcTemplate, and NamedParameterJdbcTemplate auto-configures and 
+ created during the startup. We can autowire these classes if we want to use it. For example: @Autowired. -->
+ 
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-jdbc</artifactId>
+   <version>${spring.version}</version>
+  </dependency>
+  
+  <!-- Commons-DBCP provides database connection pooling services -->
+  
+  <dependency>
+   <groupId>commons-dbcp</groupId>
+   <artifactId>commons-dbcp</artifactId>
+   <version>1.2.2</version>
+  </dependency>
+ 
+ 
+ <dependency>
+   <groupId>javax.persistence</groupId>
+   <artifactId>persistence-api</artifactId>
+   <version>1.0.2</version>
+   <scope>provided</scope>
+</dependency>
+ 
+<dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency> 
+ 
+ 
+       <!--  <dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency> -->
+		
+		<!-- 
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.1.0.Final</version>
+		</dependency> -->
+ 
+ 
+ <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.1</version>
+</dependency>
+ 
+ <!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+<dependency>
+    <groupId>javax.ws.rs</groupId>
+    <artifactId>javax.ws.rs-api</artifactId>
+    <version>2.0-m01</version>
+</dependency>
+ 
+ 
+ 
+ </dependencies>
+ 
+</project>
